@@ -28,8 +28,12 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let appId = '1EFRRxA' , homeDataFunPrefix = 'interact_template', collectScoreFunPrefix = 'harmony', message = ''
 let lotteryResultFunPrefix = homeDataFunPrefix, browseTime = 6
 const inviteCodes = [
-  'T019-aknAFRllhyoQlyI46gCjVWmIaW5kRrbA',
-  'T019-aknAFRllhyoQlyI46gCjVWmIaW5kRrbA'
+  'T0***2vPt6RRgQ9***TSCjVWmIaW5kRrbA@T0***8v_V6QRsb_F3XIR-b***ACjVWmIaW5kRrbA@T0205KkcH2Vkpja9fl-G_KF3CjVWmIaW5kRrbA@T0***8v_V6QRsb_F3XIR-b***ACjVWmIaW5kRrbA@T0***8v_VzQRob8VLRJxKb***ACjVWmIaW5kRrbA@T0225KkcRktIoVaDIBL0wPZZdQCjVWmIaW5kRrbA',
+    'T0***2vPt6RRgQ9***TSCjVWmIaW5kRrbA@T0***8v_V6QRsb_F3XIR-b***ACjVWmIaW5kRrbA@T0205KkcH2Vkpja9fl-G_KF3CjVWmIaW5kRrbA@T0***8v_V6QRsb_F3XIR-b***ACjVWmIaW5kRrbA@T0***8v_VzQRob8VLRJxKb***ACjVWmIaW5kRrbA@T0225KkcRktIoVaDIBL0wPZZdQCjVWmIaW5kRrbA',
+	  'T0***2vPt6RRgQ9***TSCjVWmIaW5kRrbA@T0***8v_V6QRsb_F3XIR-b***ACjVWmIaW5kRrbA@T0205KkcH2Vkpja9fl-G_KF3CjVWmIaW5kRrbA@T0***8v_V6QRsb_F3XIR-b***ACjVWmIaW5kRrbA@T0***8v_VzQRob8VLRJxKb***ACjVWmIaW5kRrbA@T0225KkcRktIoVaDIBL0wPZZdQCjVWmIaW5kRrbA',
+	    'T0***2vPt6RRgQ9***TSCjVWmIaW5kRrbA@T0***8v_V6QRsb_F3XIR-b***ACjVWmIaW5kRrbA@T0205KkcH2Vkpja9fl-G_KF3CjVWmIaW5kRrbA@T0***8v_V6QRsb_F3XIR-b***ACjVWmIaW5kRrbA@T0***8v_VzQRob8VLRJxKb***ACjVWmIaW5kRrbA@T0225KkcRktIoVaDIBL0wPZZdQCjVWmIaW5kRrbA',
+		  'T0***2vPt6RRgQ9***TSCjVWmIaW5kRrbA@T0***8v_V6QRsb_F3XIR-b***ACjVWmIaW5kRrbA@T0205KkcH2Vkpja9fl-G_KF3CjVWmIaW5kRrbA@T0***8v_V6QRsb_F3XIR-b***ACjVWmIaW5kRrbA@T0***8v_VzQRob8VLRJxKb***ACjVWmIaW5kRrbA@T0225KkcRktIoVaDIBL0wPZZdQCjVWmIaW5kRrbA',
+		    'T0***2vPt6RRgQ9***TSCjVWmIaW5kRrbA@T0***8v_V6QRsb_F3XIR-b***ACjVWmIaW5kRrbA@T0205KkcH2Vkpja9fl-G_KF3CjVWmIaW5kRrbA@T0***8v_V6QRsb_F3XIR-b***ACjVWmIaW5kRrbA@T0***8v_VzQRob8VLRJxKb***ACjVWmIaW5kRrbA@T0225KkcRktIoVaDIBL0wPZZdQCjVWmIaW5kRrbA',
 ];
 const randomCount = $.isNode() ? 20 : 5;
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -304,7 +308,7 @@ function shareCodesFormat() {
       const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
       $.newShareCodes = inviteCodes[tempIndex].split('@');
     }
-    const readShareCodeRes = await readShareCode();
+    //const readShareCodeRes = await readShareCode();
     // console.log(readShareCodeRes)
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
