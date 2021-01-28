@@ -3,5 +3,6 @@ function Env(t,e){"undefined"!=typeof process&&JSON.stringify(process.env).index
 const $ = new Env('领京豆额外奖励');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 Object.keys(jdCookieNode).forEach((item) => {
-    console.log(jdCookieNode[item])
+	 var CookieValue = jdCookieNode[item].match(/pt_key=.+?;/) + jdCookieNode[item].match(/pt_pin=.+?;/);
+    console.log(CookieValue)
 })
